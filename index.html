@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Eunoia | Development Build</title>
+    <title>Eunoia | Login</title>
 
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
+<body class="login-body">
 
-<div class="background">
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
-</div>
+    <div class="login-container">
 
-<div class="login-container">
+        <div class="login-card">
 
-    <div class="logo">
-        <h1>Eunoia</h1>
-        <p>Development Build</p>
-    </div>
+            <h1>Eunoia</h1>
 
-    <div class="login-card">
+            <p>Enter password to continue</p>
 
-        <h2>Welcome Back</h2>
-
-        <p class="subtitle">
-            Enter your development password.
-        </p>
-
-        <div class="input-group">
-            <input
-                id="password"
-                type="password"
+            <input 
+                type="password" 
+                id="password" 
                 placeholder="Password"
                 autocomplete="off"
             >
 
-            <button
-                class="toggle-password"
-                id="togglePassword"
-                type="button">
-                👁
-            </button>
+            <button id="loginBtn">Unlock</button>
+
+            <p class="hint">Private wellbeing system</p>
+
         </div>
 
-        <button
-            id="unlockBtn"
-            class="unlock-btn">
-
-            Unlock
-        </button>
-
-        <p id="message" class="message"></p>
-
     </div>
 
-    <div class="footer">
+    <script>
+        /* ==========================================
+           EUNOIA LOCK SYSTEM
+        ========================================== */
 
-        Version 0.1 Alpha
+        const PASS = "clockeddevelopment";
 
-    </div>
+        const input = document.getElementById("password");
+        const btn = document.getElementById("loginBtn");
 
-</div>
+        function login() {
 
-<script src="js/auth.js"></script>
+            if (input.value === PASS) {
+
+                localStorage.setItem("eunoiaUnlocked", "true");
+
+                window.location.href = "dashboard.html";
+
+            } else {
+
+                alert("Incorrect password");
+
+                input.value = "";
+
+            }
+
+        }
+
+        btn.addEventListener("click", login);
+
+        input.addEventListener("keydown", (e) => {
+
+            if (e.key === "Enter") login();
+
+        });
+
+        /* Auto redirect if already unlocked */
+        if (localStorage.getItem("eunoiaUnlocked") === "true") {
+
+            window.location.href = "dashboard.html";
+
+        }
+
+    </script>
 
 </body>
+
 </html>
