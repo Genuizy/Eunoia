@@ -1,0 +1,87 @@
+/* ==========================================
+   EUNOIA
+   Settings System
+   Version 0.2 Alpha
+========================================== */
+
+.settings-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+    margin-top:30px;
+
+}
+
+/* ==========================
+   Cards
+========================== */
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    padding:25px;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+button{
+
+    margin-top:15px;
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        90deg,
+        #8B5CF6,
+        #38BDF8
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:1000px){
+
+.settings-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
