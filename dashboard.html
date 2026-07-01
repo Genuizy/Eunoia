@@ -17,6 +17,10 @@
 
 <body class="dashboard-body">
 
+<!-- ==========================
+     SIDEBAR
+========================== -->
+
 <div class="sidebar">
 
     <div class="brand">
@@ -41,44 +45,71 @@
 
 </div>
 
+<!-- ==========================
+     MAIN CONTENT
+========================== -->
+
 <div class="content">
 
     <header>
 
         <h1>Welcome back</h1>
+
         <p id="currentDate"></p>
 
     </header>
 
+    <!-- ==========================
+         DASHBOARD GRID
+    ========================== -->
+
     <section class="grid">
 
         <div class="card">
-            <h2>Quick Mood</h2>
-            <p>Track how you're feeling today.</p>
+
+            <h2>🧠 Daily Check-in</h2>
+
+            <p>Track your mood, energy, and thoughts for today.</p>
+
         </div>
 
         <div class="card">
-            <h2>Habits</h2>
-            <p>Keep your streaks going.</p>
+
+            <h2>🌱 Habits</h2>
+
+            <p>Keep your streaks going and stay consistent.</p>
+
         </div>
 
         <div class="card">
-            <h2>Goals</h2>
-            <p>See your progress.</p>
+
+            <h2>🎯 Goals</h2>
+
+            <p>See your progress and stay focused on what matters.</p>
+
         </div>
 
         <div class="card">
-            <h2>Insights</h2>
-            <p>Understand your patterns.</p>
+
+            <h2>📊 Insights</h2>
+
+            <p>Understand your emotional and productivity patterns.</p>
+
         </div>
 
     </section>
 
 </div>
 
+<!-- ==========================
+     DATE SCRIPT
+========================== -->
+
 <script>
+
     document.getElementById("currentDate").textContent =
         new Date().toDateString();
+
 </script>
 
 </body>
