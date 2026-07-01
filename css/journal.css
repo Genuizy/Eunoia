@@ -1,0 +1,347 @@
+/* ==========================================
+   EUNOIA
+   Journal Styles
+   Version 0.1 Alpha
+========================================== */
+
+/* ==========================
+   Toolbar
+========================== */
+
+.journal-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:30px 0;
+
+    flex-wrap:wrap;
+
+}
+
+.journal-toolbar input{
+
+    flex:1;
+
+    min-width:250px;
+
+}
+
+.journal-toolbar button{
+
+    padding:14px 24px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #8B5CF6,
+        #38BDF8
+    );
+
+    transition:.3s;
+
+}
+
+.journal-toolbar button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================
+   Main Layout
+========================== */
+
+.journal-layout{
+
+    display:grid;
+
+    grid-template-columns:340px 1fr;
+
+    gap:25px;
+
+    margin-top:20px;
+
+}
+
+/* ==========================
+   Panels
+========================== */
+
+.entries-panel,
+.editor-panel{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    padding:25px;
+
+}
+
+/* ==========================
+   Entry List
+========================== */
+
+.entries-panel{
+
+    max-height:70vh;
+
+    overflow-y:auto;
+
+}
+
+.entries-panel h2{
+
+    margin-bottom:20px;
+
+}
+
+.entry-card{
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.05);
+
+    margin-bottom:15px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.entry-card:hover{
+
+    transform:translateX(6px);
+
+    background:rgba(255,255,255,.09);
+
+}
+
+.entry-card h3{
+
+    margin-bottom:8px;
+
+}
+
+.entry-card p{
+
+    color:#B8C2D5;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+
+}
+
+.entry-card span{
+
+    color:#8B5CF6;
+
+    font-size:13px;
+
+}
+
+.active-entry{
+
+    border:2px solid #8B5CF6;
+
+}
+
+/* ==========================
+   Editor
+========================== */
+
+.editor-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.editor-panel input,
+.editor-panel select{
+
+    margin-bottom:18px;
+
+}
+
+.editor-panel select{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+.editor-panel option{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+textarea{
+
+    flex:1;
+
+    min-height:420px;
+
+    resize:vertical;
+
+    border:none;
+
+    outline:none;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+textarea::placeholder{
+
+    color:#AEB7C9;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.editor-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.editor-actions button{
+
+    flex:1;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#saveEntry{
+
+    background:linear-gradient(
+        90deg,
+        #22C55E,
+        #16A34A
+    );
+
+    color:white;
+
+}
+
+#clearEntry{
+
+    background:#EF4444;
+
+    color:white;
+
+}
+
+.editor-actions button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:1100px){
+
+.journal-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.entries-panel{
+
+max-height:300px;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.editor-actions{
+
+flex-direction:column;
+
+}
+
+.journal-toolbar{
+
+flex-direction:column;
+
+align-items:stretch;
+
+}
+
+}
