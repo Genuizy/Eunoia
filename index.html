@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eunoia | Development Build</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+</div>
+
+<div class="login-container">
+
+    <div class="logo">
+        <h1>Eunoia</h1>
+        <p>Development Build</p>
+    </div>
+
+    <div class="login-card">
+
+        <h2>Welcome Back</h2>
+
+        <p class="subtitle">
+            Enter your development password.
+        </p>
+
+        <div class="input-group">
+            <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                autocomplete="off"
+            >
+
+            <button
+                class="toggle-password"
+                id="togglePassword"
+                type="button">
+                👁
+            </button>
+        </div>
+
+        <button
+            id="unlockBtn"
+            class="unlock-btn">
+
+            Unlock
+        </button>
+
+        <p id="message" class="message"></p>
+
+    </div>
+
+    <div class="footer">
+
+        Version 0.1 Alpha
+
+    </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+
+</body>
+</html>
