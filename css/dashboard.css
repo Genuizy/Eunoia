@@ -1,374 +1,160 @@
 /* ==========================================
-   EUNOIA
-   Dashboard Styles
-   Version 0.1 Alpha
+   EUNOIA DASHBOARD STYLES
 ========================================== */
 
-.dashboard-body{
+body{
 
-    display:flex;
+    margin:0;
 
-    background:linear-gradient(135deg,#070B14,#111827,#1E293B);
+    font-family:Inter, sans-serif;
 
-    overflow:hidden;
+    background:#0a0b10;
+
+    color:#fff;
 
 }
 
 /* ==========================
-   Sidebar
+   SIDEBAR
 ========================== */
 
 .sidebar{
 
-    width:280px;
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:240px;
 
     height:100vh;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.04);
 
-    backdrop-filter:blur(24px);
+    backdrop-filter:blur(20px);
 
-    border-right:1px solid rgba(255,255,255,.12);
+    border-right:1px solid rgba(255,255,255,.08);
 
-    padding:28px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
+    padding:20px;
 
 }
 
 .brand h2{
 
-    font-size:32px;
-
-    background:linear-gradient(
-        90deg,
-        #8B5CF6,
-        #38BDF8
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
+    margin:0;
 
 }
 
 .brand span{
 
-    color:#AEB7C9;
+    font-size:12px;
 
-    font-size:13px;
+    color:#AEB7C9;
 
 }
 
 /* ==========================
-   Navigation
+   NAVIGATION (FIXED CLICK ISSUE)
 ========================== */
 
-nav{
+.sidebar-nav{
 
-    margin-top:35px;
-
-}
-
-details{
-
-    margin-bottom:18px;
+    margin-top:30px;
 
 }
 
-summary{
+.sidebar-nav a{
 
-    cursor:pointer;
+    display:block;
 
-    color:white;
+    padding:12px 14px;
 
-    font-weight:600;
-
-    list-style:none;
-
-    padding:12px 0;
-
-}
-
-summary::-webkit-details-marker{
-
-    display:none;
-
-}
-
-.menu-btn,
-details button{
-
-    width:100%;
-
-    border:none;
-
-    background:none;
-
-    color:#D6D9E4;
-
-    padding:12px 16px;
-
-    margin-top:6px;
-
-    text-align:left;
+    margin:6px 0;
 
     border-radius:12px;
 
-    cursor:pointer;
+    text-decoration:none;
 
-    transition:.25s;
+    color:#DCE3F2;
 
-    font-size:15px;
+    background:rgba(255,255,255,.05);
 
-}
-
-.menu-btn:hover,
-details button:hover{
-
-    background:rgba(255,255,255,.10);
-
-    transform:translateX(6px);
+    transition:.2s;
 
 }
 
-.active{
+.sidebar-nav a:hover{
 
-    background:linear-gradient(
-        90deg,
-        #8B5CF6,
-        #38BDF8
-    );
+    background:rgba(255,255,255,.12);
+
+    transform:translateX(4px);
+
+}
+
+.sidebar-nav a.active{
+
+    background:linear-gradient(90deg,#8B5CF6,#38BDF8);
 
     color:white;
 
 }
 
 /* ==========================
-   Logout
-========================== */
-
-.logout{
-
-    border:none;
-
-    background:#EF4444;
-
-    color:white;
-
-    padding:15px;
-
-    border-radius:14px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-size:15px;
-
-}
-
-.logout:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:0 12px 24px rgba(239,68,68,.3);
-
-}
-
-/* ==========================
-   Content
+   CONTENT AREA
 ========================== */
 
 .content{
 
-    flex:1;
+    margin-left:240px;
 
-    padding:45px;
-
-    overflow-y:auto;
-
-}
-
-header h1{
-
-    font-size:40px;
-
-    margin-bottom:10px;
-
-}
-
-header p{
-
-    color:#B9C0CF;
+    padding:30px;
 
 }
 
 /* ==========================
-   Dashboard Cards
+   GRID CARDS
 ========================== */
 
-.cards{
+.grid{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(2,1fr);
 
-    gap:22px;
+    gap:20px;
 
-    margin-top:35px;
+    margin-top:30px;
 
 }
 
 .card{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.06);
 
-    backdrop-filter:blur(22px);
+    border:1px solid rgba(255,255,255,.1);
 
-    border:1px solid rgba(255,255,255,.10);
+    padding:20px;
 
-    border-radius:20px;
+    border-radius:16px;
 
-    padding:28px;
-
-    transition:.3s;
+    transition:.2s;
 
 }
 
 .card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 
-    box-shadow:0 18px 35px rgba(0,0,0,.28);
-
-}
-
-.card h3{
-
-    color:#C8CEDD;
-
-    margin-bottom:18px;
-
-    font-size:16px;
-
-}
-
-.card h2{
-
-    font-size:34px;
-
-    margin-bottom:12px;
-
-}
-
-.card p{
-
-    color:#9EA7BA;
+    background:rgba(255,255,255,.09);
 
 }
 
 /* ==========================
-   Large Welcome Card
+   RESPONSIVE
 ========================== */
 
-.large-card{
-
-    margin-top:35px;
-
-    background:rgba(255,255,255,.08);
-
-    backdrop-filter:blur(24px);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    border-radius:22px;
-
-    padding:35px;
-
-}
-
-.large-card h2{
-
-    margin-bottom:18px;
-
-    font-size:30px;
-
-}
-
-.large-card p{
-
-    color:#C4CAD8;
-
-    line-height:1.7;
-
-}
-
-.large-card ul{
-
-    margin-top:20px;
-
-    padding-left:22px;
-
-}
-
-.large-card li{
-
-    margin:12px 0;
-
-    color:#DCE3F2;
-
-}
-
-/* ==========================
-   Scrollbar
-========================== */
-
-::-webkit-scrollbar{
-
-    width:8px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-    background:#444F63;
-
-    border-radius:999px;
-
-}
-
-/* ==========================
-   Responsive
-========================== */
-
-@media(max-width:1000px){
-
-.sidebar{
-
-    width:220px;
-
-}
-
-.content{
-
-    padding:28px;
-
-}
-
-}
-
-@media(max-width:760px){
-
-.dashboard-body{
-
-    flex-direction:column;
-
-}
+@media(max-width:900px){
 
 .sidebar{
 
@@ -376,17 +162,19 @@ header p{
 
     height:auto;
 
+    position:relative;
+
 }
 
-.cards{
+.content{
+
+    margin-left:0;
+
+}
+
+.grid{
 
     grid-template-columns:1fr;
-
-}
-
-header h1{
-
-    font-size:30px;
 
 }
 
