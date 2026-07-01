@@ -2,7 +2,233 @@
    EUNOIA - STYLE.CSS
    Version 0.1 Alpha
 ======================================== */
+/* ==========================================
+   LOGIN REDESIGN (EUNOIA PREMIUM UI)
+========================================== */
 
+.login-body{
+
+    margin:0;
+
+    font-family:Inter, sans-serif;
+
+    background:#0a0b10;
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+/* soft glowing background */
+.login-bg{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(139,92,246,0.25), transparent 40%),
+        radial-gradient(circle at 80% 60%, rgba(56,189,248,0.25), transparent 40%);
+
+    filter:blur(60px);
+
+}
+
+/* layout */
+.login-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    height:100vh;
+
+}
+
+/* LEFT SIDE */
+.login-left{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:80px;
+
+}
+
+.login-left h1{
+
+    font-size:64px;
+
+    margin:0;
+
+}
+
+.tagline{
+
+    font-size:18px;
+
+    color:#AEB7C9;
+
+    margin-top:10px;
+
+    max-width:400px;
+
+}
+
+.quote{
+
+    margin-top:40px;
+
+    font-style:italic;
+
+    color:#8B5CF6;
+
+}
+
+/* RIGHT SIDE */
+.login-right{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* CARD */
+.login-card{
+
+    width:340px;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+}
+
+.login-card h2{
+
+    margin:0;
+
+}
+
+.sub{
+
+    color:#AEB7C9;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+
+}
+
+/* INPUTS */
+.login-card input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:8px 0;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    outline:none;
+
+}
+
+/* BUTTONS */
+.login-card button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:linear-gradient(90deg,#8B5CF6,#38BDF8);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+.login-card button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* GOOGLE */
+.google-btn{
+
+    background:white !important;
+
+    color:black !important;
+
+}
+
+/* DIVIDER */
+.divider{
+
+    text-align:center;
+
+    margin:12px 0;
+
+    color:#666;
+
+    font-size:12px;
+
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.login-wrapper{
+
+    flex-direction:column;
+
+}
+
+.login-left{
+
+    display:none;
+
+}
+
+}
 *{
     margin:0;
     padding:0;
