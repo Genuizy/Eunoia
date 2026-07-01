@@ -9,6 +9,7 @@
     <title>Eunoia | Login</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -22,18 +23,16 @@
 
             <h1>Eunoia</h1>
 
-            <p>Enter password to continue</p>
+            <p>Private wellbeing system</p>
 
             <input 
                 type="password" 
                 id="password" 
-                placeholder="Password"
+                placeholder="Enter password"
                 autocomplete="off"
             >
 
             <button id="loginBtn">Unlock</button>
-
-            <p class="hint">Private wellbeing system</p>
 
         </div>
 
@@ -66,24 +65,7 @@
         btn.addEventListener("click", login);
 
         input.addEventListener("keydown", (e) => {
-
             if (e.key === "Enter") login();
-
-        });
-
-        // FIX: safer redirect (prevents “skip glitch” loops)
-        window.addEventListener("load", () => {
-
-            const unlocked = localStorage.getItem("eunoiaUnlocked");
-
-            const justReset = sessionStorage.getItem("eunoiaReset");
-
-            if (unlocked === "true" && !justReset) {
-
-                window.location.href = "dashboard.html";
-
-            }
-
         });
     </script>
 
