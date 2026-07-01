@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Eunoia | Login</title>
+    <title>Eunoia | Welcome</title>
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -16,36 +16,52 @@
 
 <body class="login-body">
 
-    <div class="login-container">
+    <div class="login-bg"></div>
 
-        <div class="login-card">
+    <div class="login-wrapper">
+
+        <div class="login-left">
 
             <h1>Eunoia</h1>
 
-            <p>Sign in to continue</p>
+            <p class="tagline">
+                A calm space for your mind, habits, and growth.
+            </p>
 
-            <!-- EMAIL -->
-            <input type="email" id="email" placeholder="Email">
+            <div class="quote">
+                “Small steps every day become lasting change.”
+            </div>
 
-            <!-- PASSWORD -->
-            <input type="password" id="password" placeholder="Password">
+        </div>
 
-            <!-- ACTION BUTTONS -->
-            <button id="loginBtn">Login</button>
+        <div class="login-right">
 
-            <button id="signupBtn">Create Account</button>
+            <div class="login-card">
 
-            <hr style="margin:15px 0; opacity:0.2;">
+                <h2>Sign in</h2>
 
-            <button id="googleBtn" class="google-btn">
-                Continue with Google
-            </button>
+                <p class="sub">Continue your journey</p>
+
+                <input type="email" id="email" placeholder="Email">
+
+                <input type="password" id="password" placeholder="Password">
+
+                <button id="loginBtn">Login</button>
+
+                <button id="signupBtn">Create account</button>
+
+                <div class="divider">or</div>
+
+                <button id="googleBtn" class="google-btn">
+                    Continue with Google
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-    <!-- FIREBASE AUTH SCRIPT -->
     <script type="module">
 
         import { auth } from "./js/firebase.js";
@@ -60,63 +76,39 @@
         const email = document.getElementById("email");
         const password = document.getElementById("password");
 
-        const loginBtn = document.getElementById("loginBtn");
-        const signupBtn = document.getElementById("signupBtn");
-        const googleBtn = document.getElementById("googleBtn");
-
-        /* ==========================
-           EMAIL LOGIN
-        ========================== */
-
-        loginBtn.addEventListener("click", async () => {
+        document.getElementById("loginBtn").onclick = async () => {
 
             try {
 
-                await signInWithEmailAndPassword(
-                    auth,
-                    email.value,
-                    password.value
-                );
+                await signInWithEmailAndPassword(auth, email.value, password.value);
 
                 window.location.href = "dashboard.html";
 
-            } catch (err) {
+            } catch (e) {
 
-                alert(err.message);
+                alert(e.message);
 
             }
 
-        });
+        };
 
-        /* ==========================
-           SIGN UP
-        ========================== */
-
-        signupBtn.addEventListener("click", async () => {
+        document.getElementById("signupBtn").onclick = async () => {
 
             try {
 
-                await createUserWithEmailAndPassword(
-                    auth,
-                    email.value,
-                    password.value
-                );
+                await createUserWithEmailAndPassword(auth, email.value, password.value);
 
                 window.location.href = "dashboard.html";
 
-            } catch (err) {
+            } catch (e) {
 
-                alert(err.message);
+                alert(e.message);
 
             }
 
-        });
+        };
 
-        /* ==========================
-           GOOGLE LOGIN
-        ========================== */
-
-        googleBtn.addEventListener("click", async () => {
+        document.getElementById("googleBtn").onclick = async () => {
 
             try {
 
@@ -126,13 +118,13 @@
 
                 window.location.href = "dashboard.html";
 
-            } catch (err) {
+            } catch (e) {
 
-                alert(err.message);
+                alert(e.message);
 
             }
 
-        });
+        };
 
     </script>
 
