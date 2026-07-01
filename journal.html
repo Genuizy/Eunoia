@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eunoia | Journal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/journal.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="dashboard-body">
+
+<div class="sidebar">
+
+    <div class="brand">
+
+        <h2>Eunoia</h2>
+
+        <span>Journal</span>
+
+    </div>
+
+    <nav>
+
+        <button onclick="location.href='dashboard.html'">
+            🏠 Dashboard
+        </button>
+
+        <button class="active">
+            📝 Journal
+        </button>
+
+        <button>Mood Tracker</button>
+
+        <button>Habits</button>
+
+        <button>Goals</button>
+
+        <button>Insights</button>
+
+    </nav>
+
+    <button id="logoutBtn" class="logout">
+
+        Logout
+
+    </button>
+
+</div>
+
+<div class="content">
+
+<header>
+
+<h1>My Journal</h1>
+
+<p id="currentDate"></p>
+
+</header>
+
+<div class="journal-toolbar">
+
+<button id="newEntryBtn">
+
+➕ New Entry
+
+</button>
+
+<input
+type="search"
+id="searchInput"
+placeholder="Search journal..."
+>
+
+</div>
+
+<div class="journal-layout">
+
+<div class="entries-panel">
+
+<h2>Entries</h2>
+
+<div id="entriesList">
+
+<div class="entry-card active-entry">
+
+<h3>Welcome to Eunoia</h3>
+
+<p>Your first journal entry will appear here.</p>
+
+<span>Today</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="editor-panel">
+
+<input
+id="entryTitle"
+type="text"
+placeholder="Entry Title"
+>
+
+<select id="moodSelect">
+
+<option>😊 Happy</option>
+
+<option>😌 Calm</option>
+
+<option>😐 Neutral</option>
+
+<option>😔 Sad</option>
+
+<option>😰 Anxious</option>
+
+<option>😡 Angry</option>
+
+<option>😴 Tired</option>
+
+</select>
+
+<textarea
+id="journalText"
+placeholder="Start writing your thoughts..."
+></textarea>
+
+<div class="editor-actions">
+
+<button id="saveEntry">
+
+💾 Save Entry
+
+</button>
+
+<button id="clearEntry">
+
+🗑 Clear
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/journal.js"></script>
+
+</body>
+
+</html>
