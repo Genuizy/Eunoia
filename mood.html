@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eunoia | Mood Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/mood.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="dashboard-body">
+
+<div class="sidebar">
+
+    <div class="brand">
+
+        <h2>Eunoia</h2>
+        <span>Mood Tracker</span>
+
+    </div>
+
+    <nav>
+
+        <button onclick="location.href='dashboard.html'">🏠 Dashboard</button>
+
+        <button onclick="location.href='journal.html'">📝 Journal</button>
+
+        <button class="active">😊 Mood Tracker</button>
+
+        <button>🌱 Habits</button>
+
+        <button>🎯 Goals</button>
+
+        <button>📊 Insights</button>
+
+    </nav>
+
+    <button id="logoutBtn" class="logout">Logout</button>
+
+</div>
+
+<div class="content">
+
+<header>
+
+    <h1>How are you feeling?</h1>
+
+    <p id="currentDate"></p>
+
+</header>
+
+<section class="mood-grid">
+
+    <!-- Mood Selector -->
+
+    <div class="card mood-selector">
+
+        <h2>Select Mood</h2>
+
+        <div class="moods">
+
+            <button data-mood="Happy">😊 Happy</button>
+            <button data-mood="Calm">😌 Calm</button>
+            <button data-mood="Excited">🤩 Excited</button>
+            <button data-mood="Tired">🥱 Tired</button>
+            <button data-mood="Anxious">😰 Anxious</button>
+            <button data-mood="Sad">😢 Sad</button>
+            <button data-mood="Angry">😡 Angry</button>
+            <button data-mood="Neutral">😐 Neutral</button>
+
+        </div>
+
+    </div>
+
+    <!-- Sliders -->
+
+    <div class="card sliders">
+
+        <h2>Energy</h2>
+        <input type="range" id="energy" min="0" max="10">
+
+        <h2>Stress</h2>
+        <input type="range" id="stress" min="0" max="10">
+
+        <h2>Focus</h2>
+        <input type="range" id="focus" min="0" max="10">
+
+        <h2>Sleep</h2>
+        <input type="range" id="sleep" min="0" max="10">
+
+        <h2>Motivation</h2>
+        <input type="range" id="motivation" min="0" max="10">
+
+    </div>
+
+    <!-- Notes -->
+
+    <div class="card notes">
+
+        <h2>Notes</h2>
+
+        <textarea id="moodNotes" placeholder="Write how your day is going..."></textarea>
+
+        <button id="saveMood">💾 Save Mood</button>
+
+    </div>
+
+</section>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/mood.js"></script>
+
+</body>
+
+</html>
