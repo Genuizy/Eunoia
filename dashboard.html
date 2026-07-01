@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -25,62 +22,22 @@
     <div class="brand">
 
         <h2>Eunoia</h2>
-        <span>v0.1 Alpha</span>
+        <span>Dashboard</span>
 
     </div>
 
-    <nav>
+    <nav class="sidebar-nav">
 
-        <button class="menu-btn active">
-            🏠 Dashboard
-        </button>
-
-        <details open>
-
-            <summary>🧠 Wellness</summary>
-
-            <button>Journal</button>
-            <button>Mood Tracker</button>
-            <button>Reflection</button>
-
-        </details>
-
-        <details>
-
-            <summary>📈 Progress</summary>
-
-            <button>Habits</button>
-            <button>Goals</button>
-            <button>Streaks</button>
-            <button>Insights</button>
-
-        </details>
-
-        <details>
-
-            <summary>🎨 Personalise</summary>
-
-            <button>Themes</button>
-            <button>Wallpapers</button>
-
-        </details>
-
-        <details>
-
-            <summary>🛟 Safety</summary>
-
-            <button>Grounding</button>
-            <button>Resources</button>
-
-        </details>
+        <a class="active" href="dashboard.html">🏠 Dashboard</a>
+        <a href="journal.html">📝 Journal</a>
+        <a href="mood.html">😊 Mood</a>
+        <a href="habits.html">🌱 Habits</a>
+        <a href="goals.html">🎯 Goals</a>
+        <a href="insights.html">📊 Insights</a>
+        <a href="safety.html">🛟 Safety</a>
+        <a href="settings.html">⚙ Settings</a>
 
     </nav>
-
-    <button id="logoutBtn" class="logout">
-
-        Logout
-
-    </button>
 
 </div>
 
@@ -88,147 +45,42 @@
 
     <header>
 
-        <div>
-
-            <h1>Good Evening 👋</h1>
-
-            <p>
-                Welcome back to Eunoia.
-            </p>
-
-        </div>
+        <h1>Welcome back</h1>
+        <p id="currentDate"></p>
 
     </header>
 
-    <section class="cards">
+    <section class="grid">
 
         <div class="card">
-
-            <h3>😊 Today's Mood</h3>
-
-            <h2>Calm</h2>
-
-            <p>No mood logged today.</p>
-
+            <h2>Quick Mood</h2>
+            <p>Track how you're feeling today.</p>
         </div>
 
         <div class="card">
-
-            <h3>📝 Journal</h3>
-
-            <h2>0 Entries</h2>
-
-            <p>Create your first journal entry.</p>
-
+            <h2>Habits</h2>
+            <p>Keep your streaks going.</p>
         </div>
 
         <div class="card">
-
-            <h3>🎯 Goals</h3>
-
-            <h2>0 Active</h2>
-
-            <p>Add your first goal.</p>
-
+            <h2>Goals</h2>
+            <p>See your progress.</p>
         </div>
 
         <div class="card">
-
-            <h3>🔥 Streak</h3>
-
-            <h2>0 Days</h2>
-
-            <p>Start your journey today.</p>
-
+            <h2>Insights</h2>
+            <p>Understand your patterns.</p>
         </div>
-
-    </section>
-
-    <section class="large-card">
-
-        <h2>Welcome to Eunoia</h2>
-
-        <p>
-
-            This dashboard is the foundation of your personal wellbeing workspace.
-
-            Soon you'll be able to:
-
-        </p>
-
-        <ul>
-
-            <li>📝 Write journal entries</li>
-
-            <li>😊 Track moods</li>
-
-            <li>🌱 Build healthy habits</li>
-
-            <li>🎯 Manage goals</li>
-
-            <li>📊 View insights</li>
-
-            <li>⏳ Track streaks</li>
-
-            <li>🎨 Change themes</li>
-
-        </ul>
 
     </section>
 
 </div>
 
 <script>
-
-if(localStorage.getItem("eunoiaUnlocked")!=="true"){
-
-    window.location="index.html";
-
-}
-
-document.getElementById("logoutBtn").onclick=function(){
-
-    localStorage.removeItem("eunoiaUnlocked");
-
-    window.location="index.html";
-
-}
-.sidebar nav a{
-
-    display:block;
-
-    padding:12px 14px;
-
-    margin:6px 0;
-
-    border-radius:12px;
-
-    text-decoration:none;
-
-    color:#DCE3F2;
-
-    background:rgba(255,255,255,.05);
-
-    transition:.2s;
-
-}
-
-.sidebar nav a:hover{
-
-    background:rgba(255,255,255,.12);
-
-    transform:translateX(4px);
-
-}
-
-.sidebar nav a.active{
-
-    background:linear-gradient(90deg,#8B5CF6,#38BDF8);
-
-    color:white;
-
-}
+    document.getElementById("currentDate").textContent =
+        new Date().toDateString();
 </script>
 
 </body>
+
 </html>
