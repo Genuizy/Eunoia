@@ -1,0 +1,106 @@
+/* ==========================================
+   EUNOIA
+   Safety Styles
+   Version 0.2 Alpha
+========================================== */
+
+.safety-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:22px;
+
+    margin-top:30px;
+
+}
+
+/* ==========================
+   Breathing Box
+========================== */
+
+.breathing-box{
+
+    width:160px;
+
+    height:160px;
+
+    margin:20px auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#8B5CF6,#38BDF8);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:18px;
+
+    transition:all 4s ease-in-out;
+
+}
+
+/* breathing animation states */
+.breathing-in{
+
+    transform:scale(1.4);
+
+}
+
+.breathing-out{
+
+    transform:scale(0.9);
+
+}
+
+/* ==========================
+   Button
+========================== */
+
+button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        90deg,
+        #8B5CF6,
+        #38BDF8
+    );
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:900px){
+
+.safety-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
