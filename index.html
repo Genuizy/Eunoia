@@ -40,10 +40,6 @@
     </div>
 
     <script>
-        /* ==========================================
-           EUNOIA LOCK SYSTEM
-        ========================================== */
-
         const PASS = "clockeddevelopment";
 
         const input = document.getElementById("password");
@@ -75,13 +71,20 @@
 
         });
 
-        /* Auto redirect if already unlocked */
-        if (localStorage.getItem("eunoiaUnlocked") === "true") {
+        // FIX: safer redirect (prevents “skip glitch” loops)
+        window.addEventListener("load", () => {
 
-            window.location.href = "dashboard.html";
+            const unlocked = localStorage.getItem("eunoiaUnlocked");
 
-        }
+            const justReset = sessionStorage.getItem("eunoiaReset");
 
+            if (unlocked === "true" && !justReset) {
+
+                window.location.href = "dashboard.html";
+
+            }
+
+        });
     </script>
 
 </body>
