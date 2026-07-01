@@ -2,10 +2,6 @@
 <html lang="en">
 
 <head>
-    <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-</script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +9,6 @@
     <title>Eunoia | Login</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -27,50 +22,118 @@
 
             <h1>Eunoia</h1>
 
-            <p>Private wellbeing system</p>
+            <p>Sign in to continue</p>
 
-            <input 
-                type="password" 
-                id="password" 
-                placeholder="Enter password"
-                autocomplete="off"
-            >
+            <!-- EMAIL -->
+            <input type="email" id="email" placeholder="Email">
 
-            <button id="loginBtn">Unlock</button>
+            <!-- PASSWORD -->
+            <input type="password" id="password" placeholder="Password">
+
+            <!-- ACTION BUTTONS -->
+            <button id="loginBtn">Login</button>
+
+            <button id="signupBtn">Create Account</button>
+
+            <hr style="margin:15px 0; opacity:0.2;">
+
+            <button id="googleBtn" class="google-btn">
+                Continue with Google
+            </button>
 
         </div>
 
     </div>
 
-    <script>
-        const PASS = "clockeddevelopment";
+    <!-- FIREBASE AUTH SCRIPT -->
+    <script type="module">
 
-        const input = document.getElementById("password");
-        const btn = document.getElementById("loginBtn");
+        import { auth } from "./js/firebase.js";
 
-        function login() {
+        import {
+            signInWithEmailAndPassword,
+            createUserWithEmailAndPassword,
+            GoogleAuthProvider,
+            signInWithPopup
+        } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
-            if (input.value === PASS) {
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
 
-                localStorage.setItem("eunoiaUnlocked", "true");
+        const loginBtn = document.getElementById("loginBtn");
+        const signupBtn = document.getElementById("signupBtn");
+        const googleBtn = document.getElementById("googleBtn");
+
+        /* ==========================
+           EMAIL LOGIN
+        ========================== */
+
+        loginBtn.addEventListener("click", async () => {
+
+            try {
+
+                await signInWithEmailAndPassword(
+                    auth,
+                    email.value,
+                    password.value
+                );
 
                 window.location.href = "dashboard.html";
 
-            } else {
+            } catch (err) {
 
-                alert("Incorrect password");
-
-                input.value = "";
+                alert(err.message);
 
             }
 
-        }
-
-        btn.addEventListener("click", login);
-
-        input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") login();
         });
+
+        /* ==========================
+           SIGN UP
+        ========================== */
+
+        signupBtn.addEventListener("click", async () => {
+
+            try {
+
+                await createUserWithEmailAndPassword(
+                    auth,
+                    email.value,
+                    password.value
+                );
+
+                window.location.href = "dashboard.html";
+
+            } catch (err) {
+
+                alert(err.message);
+
+            }
+
+        });
+
+        /* ==========================
+           GOOGLE LOGIN
+        ========================== */
+
+        googleBtn.addEventListener("click", async () => {
+
+            try {
+
+                const provider = new GoogleAuthProvider();
+
+                await signInWithPopup(auth, provider);
+
+                window.location.href = "dashboard.html";
+
+            } catch (err) {
+
+                alert(err.message);
+
+            }
+
+        });
+
     </script>
 
 </body>
