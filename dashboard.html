@@ -193,7 +193,41 @@ document.getElementById("logoutBtn").onclick=function(){
     window.location="index.html";
 
 }
+.sidebar nav a{
 
+    display:block;
+
+    padding:12px 14px;
+
+    margin:6px 0;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:#DCE3F2;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.2s;
+
+}
+
+.sidebar nav a:hover{
+
+    background:rgba(255,255,255,.12);
+
+    transform:translateX(4px);
+
+}
+
+.sidebar nav a.active{
+
+    background:linear-gradient(90deg,#8B5CF6,#38BDF8);
+
+    color:white;
+
+}
 </script>
 
 </body>
