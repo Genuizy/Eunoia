@@ -1,0 +1,130 @@
+/* ==========================================
+   EUNOIA
+   Theme System
+   Version 0.2 Alpha
+========================================== */
+
+.themes-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:22px;
+
+    margin-top:30px;
+
+}
+
+/* ==========================
+   Theme Buttons
+========================== */
+
+.theme-btn{
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.25s;
+
+}
+
+.theme-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.12);
+
+}
+
+/* ==========================
+   Preview Box
+========================== */
+
+.preview-box{
+
+    margin-top:15px;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.05);
+
+}
+
+.preview-card{
+
+    margin-top:15px;
+
+    height:120px;
+
+    border-radius:14px;
+
+    background:linear-gradient(90deg,#8B5CF6,#38BDF8);
+
+}
+
+/* ==========================
+   Themes (global overrides)
+========================== */
+
+.theme-dark{
+
+    --bg:#0a0b10;
+
+}
+
+.theme-ocean{
+
+    --bg:#071a2f;
+
+}
+
+.theme-forest{
+
+    --bg:#062a1b;
+
+}
+
+.theme-sunset{
+
+    --bg:#2a0f1f;
+
+}
+
+/* Apply background */
+body{
+
+    background:var(--bg,#0a0b10);
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:900px){
+
+.themes-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
