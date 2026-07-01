@@ -1,0 +1,393 @@
+/* ==========================================
+   EUNOIA
+   Dashboard Styles
+   Version 0.1 Alpha
+========================================== */
+
+.dashboard-body{
+
+    display:flex;
+
+    background:linear-gradient(135deg,#070B14,#111827,#1E293B);
+
+    overflow:hidden;
+
+}
+
+/* ==========================
+   Sidebar
+========================== */
+
+.sidebar{
+
+    width:280px;
+
+    height:100vh;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    border-right:1px solid rgba(255,255,255,.12);
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+}
+
+.brand h2{
+
+    font-size:32px;
+
+    background:linear-gradient(
+        90deg,
+        #8B5CF6,
+        #38BDF8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.brand span{
+
+    color:#AEB7C9;
+
+    font-size:13px;
+
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+nav{
+
+    margin-top:35px;
+
+}
+
+details{
+
+    margin-bottom:18px;
+
+}
+
+summary{
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:600;
+
+    list-style:none;
+
+    padding:12px 0;
+
+}
+
+summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.menu-btn,
+details button{
+
+    width:100%;
+
+    border:none;
+
+    background:none;
+
+    color:#D6D9E4;
+
+    padding:12px 16px;
+
+    margin-top:6px;
+
+    text-align:left;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:15px;
+
+}
+
+.menu-btn:hover,
+details button:hover{
+
+    background:rgba(255,255,255,.10);
+
+    transform:translateX(6px);
+
+}
+
+.active{
+
+    background:linear-gradient(
+        90deg,
+        #8B5CF6,
+        #38BDF8
+    );
+
+    color:white;
+
+}
+
+/* ==========================
+   Logout
+========================== */
+
+.logout{
+
+    border:none;
+
+    background:#EF4444;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.logout:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 24px rgba(239,68,68,.3);
+
+}
+
+/* ==========================
+   Content
+========================== */
+
+.content{
+
+    flex:1;
+
+    padding:45px;
+
+    overflow-y:auto;
+
+}
+
+header h1{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    color:#B9C0CF;
+
+}
+
+/* ==========================
+   Dashboard Cards
+========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:22px;
+
+    margin-top:35px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.28);
+
+}
+
+.card h3{
+
+    color:#C8CEDD;
+
+    margin-bottom:18px;
+
+    font-size:16px;
+
+}
+
+.card h2{
+
+    font-size:34px;
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    color:#9EA7BA;
+
+}
+
+/* ==========================
+   Large Welcome Card
+========================== */
+
+.large-card{
+
+    margin-top:35px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    padding:35px;
+
+}
+
+.large-card h2{
+
+    margin-bottom:18px;
+
+    font-size:30px;
+
+}
+
+.large-card p{
+
+    color:#C4CAD8;
+
+    line-height:1.7;
+
+}
+
+.large-card ul{
+
+    margin-top:20px;
+
+    padding-left:22px;
+
+}
+
+.large-card li{
+
+    margin:12px 0;
+
+    color:#DCE3F2;
+
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#444F63;
+
+    border-radius:999px;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:1000px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.content{
+
+    padding:28px;
+
+}
+
+}
+
+@media(max-width:760px){
+
+.dashboard-body{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    width:100%;
+
+    height:auto;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+header h1{
+
+    font-size:30px;
+
+}
+
+}
